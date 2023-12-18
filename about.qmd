@@ -1,0 +1,12 @@
+---
+title: "About"
+format: html
+editor: visual
+---
+
+This project was developed by Chipotle For [STA 199: Introduction to Data Science](https://sta199-f23-2.github.io/) at Duke University. The team is comprised of the following team members.
+
+-   Team member 1: Arjun Mahesh is a Sophomore at Duke from Seattle, Washington. He is a Computer Science (AI/ML) and Statistics double major and a Finance minor.
+-   Team member 2: Jordan Campbell is a Senior at Duke from North Carolina. He is a Biology major and minors in Linguistics and Evolutionary Anthropology.
+-   Team member 3: Daniel Marin is a Freshman at Duke from Costa Rica, he is a prospective Statistics and Economics double major.
+-   Team member 4: Justin Colon is a Sophomore at Duke from San Antonio, Texas, and he is a biology major.

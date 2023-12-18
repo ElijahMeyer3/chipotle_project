@@ -1,0 +1,125 @@
+---
+title: "A Comparison of Pre-and Post-2013 Statistics on Rape in the United States"
+subtitle: "Proposal"
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+```{r}
+#| label: load-pkgs
+#| message: false
+
+library(tidyverse)
+```
+
+# Data 1
+
+## Introduction and data
+
+-   Source: CORGIS Dataset Project
+
+-   Data Collection: Unified Crime Reporting collaboration between the US DOJ and the FBI
+
+-   Description: The dataset has information on the crime rates and totals across the US for a wide range of years. The crime reports are divided into two main categories: property and violent. Property crime refers to burglary, larceny, and motor related crime, while violent crime refers to assault, murder, rape, and robbery.
+
+## Research question
+
+-   Research Question: Given the UCR definition of rape changed in 2013, which states experienced an increase in reported rapes as a result of the change in definition, and which states experienced a decrease?
+
+-   Description: In 2013, the UCR updated the 80-year old definition of rape previously known as "carnal knowledge of a woman forcibly and against her will", to a more encompassing definition for both the term as well as the crime. Given the change in 2013, we believe that most states (90%) will experience an increase in rapes after 2013 as compared to before 2013.
+
+-   Given a categorical state (string), the variables are all numerical. There are values for each total number (integer) of crime, as well as the crime rates (float) per 100,000 people, given a crime (specified in the key).
+
+## Literature
+
+-   https://www.justice.gov/archives/ovw/blog/updated-definition-rape
+
+-   The article explores the old and new versions of the definition of rape, exploring how the term is now more inclusive of perpetrative act. The article highlights that although this does not necessarily mean that rape rates are expected to increase, they are just likely to be more accurately reported, inflating the numbers, while also keeping track of rape rates using the old definition too.
+
+-   This research question allows us to more finely distinct between states that do commit more acts of sexual harm because current numbers may be under counted.
+
+## Glimpse of data
+
+```{r}
+#| label: load-state-crimes
+
+crimes <- read.csv("data/state_crime.csv")
+glimpse(crimes)
+```
+
+# Data 2
+
+## Introduction and data
+
+-   Source: CORGIS Dataset Project
+
+-   Data Collection: The data were collected by The National Center for Health Statistics at the Centers for Disease Control and Prevention from 1999 until 2019
+
+-   Description: The dataset has information on the number of overdose deaths per year across all states within the United States, and this information is categorized by the type of drug associated with the death (all drugs, any drug, prescription opioids, synthetic opioids, heroin, and cocaine). The dataset also includes states' rates of overdose deaths per 100,000 people, which are categorized by drug type, race, and biological sex.
+
+-   Ethical Concerns: While the data have been de-identified, ethical concerns about violating individuals' privacy can be put aside. However, it is still important to consider that statistics calculated from this data set could drive harmful racist, sexist and geographic stereotypes about drug use which could be used to justify a number of things related to healthcare and employment.
+
+## Research question
+
+-   Research Question: Does the death toll for male opioid overdoses outweigh the death toll for female opioid overdoses when comparing between cocaine and a range of opioids (which include heroin, prescription and synthetic opioids)? This question will help detect the differences between trends in opioid usage that exist for females and males within each state, which will in turn allow us to compare these statistics between states. Health officials could use these data to develop more specific tactics for targeting opioid usage in their communities.
+
+-   Research Topics: Deaths from opioid overdoses have been on a steady rise over the past twenty years. The Centers for Disease Control and Prevention (CDC) reports that between 2020 and 2021, drug overdose deaths involving opioids increased by 15%, heroin-involved death rates decreased by 23%, and synthetic opioid-involved death rates increased by 22%. The CDC also reports that over 75% of the 100,000+ overdose deaths in 2021 were due to opioids. We hypothesize three things: 1) males overdose more on synthetic opioids and heroin than females, 2) females overdose more on prescription opioids and cocaine than males, and 3) males have higher rates of overdose deaths across all drugs in the dataset.
+
+-   Variable Types: All the variables in the data set are numerical. There are integer values for each total number of overdose deaths, as well as the overdose rates per 100,000 people for a given race, drug name, or sex.
+
+## Literature
+
+-   https://nida.nih.gov/research-topics/trends-statistics/overdose-death-rates
+
+-   https://stacks.cdc.gov/view/cdc/112340 [@hedegaard2021]
+
+-   The rate of opioid overdose deaths has continuously risen from year to year since 1999 (except for the duration between 2017 and 2019). From 1999 to 2006, the rate of opioid overdose deaths gradually increased before remaining somewhat stable from 2006 to 2013. In 2013, these death rates began to rise again, showing a significant increase between 2015 and 2017. The largest increase in the yearly rate of opioid deaths occurred between 2020 and 2021. Charts from the NIH show that, based on All Drug-Involved Overdoses and Overdose Deaths Involving Any Opioid, men were reported to have higher death rates than women across all ages.
+
+-   This question can allow us to use the data to elucidate and compare patterns of specific drug usage and subsequent overdose deaths between the gender groups.
+
+## Glimpse of data
+
+```{r}
+#| label: load-opioids-data
+
+opioids <- read.csv("data/opioids.csv")
+glimpse(opioids)
+```
+
+# Data 3
+
+## Introduction and data
+
+-   The data was sourced from the CORGIS( The Collection of Really Great, Interesting, Situated Datasets) Dataset Project. It was put together by Austin Cory Bart, Ryan Whitcomb, Joung Min Choi, and Bo Guan, and uploaded on November 29th, 2021.
+
+-   The data comes from the annual NSDUH (National Study on Drug Use and Health) from the years 2002 to 2018.
+
+-   The observations in the data set are almost entirely numeric, except for the state and year categorical variables. Observations focus on alcohol, marijuana, tobacco, and other illicit drug use both in raw totals in thousands and as per 1,000 rates. Each quantitative variable further specifies the age range it covers, with the population of each state/year combination being provided for the age ranges that are used.
+
+-   There are no obvious ethical questions regarding the use of the data set since it is summarized as population-level data that is non-identifiable to specific individuals and respects privacy concerns.
+
+## Research question
+
+-   From 2002 to 2018, what is the relationship between marijuana use and the usage rates of other types of harmful substances (alcohol, tobacco, and other illicit drugs)?
+
+-   Through our research we want to explore the topic of marijuana use and the possible relationship between alcohol and other harmful substances. Many people believe there exists a "gateway" effect, particularly with marijuana, where many consumption of this drug eventually leads to people consuming more dangerous substances later on. As recreational marijuana is becoming increasingly legal, it is important to understand whether this effect exists, both among marijuana and "harder" drugs, and among marijuana and other legal, but unhealthy substances (tobacco and alcohol). We hypothesize that there will be a weak relationship between rates of total and new marijuana users and rates of use of illicit drugs, with a more moderate relationship between marijuana and tobacco/alcohol, thus providing evidence against the gateway effect.
+
+-   Variables in Research Question: State (Categorical), Year (Categorical), Rates of Marijuana Use (Quantitative), Rates of New Marijuana Users (Quantitative), Rates of Illicit Drug Use (Quantitative), Rates of Tobacco/Cigarette Use (Quantitative), Rates of Alcohol Use (Quantitative)
+
+## Literature
+
+-   https://www.samhsa.gov/data/sites/default/files/cbhsq-reports/NSDUHNationalFindingsReport2018/NSDUHNationalFindingsReport2018.pdf
+
+-   The article talks about trends between consumption of alcohol, illicit drugs, etc. Specifically between the years 2015-2018, marijuana use among people 12 and older has increased while trends can be seen as decreasing for cocaine use and past month heavy alcohol use. This does not necessarily mean there is a correlation between marijuana use and other illicit drugs. Also, over 80% of past year illicit drug users in 2018 used marijuana.
+
+-   The research question allows us to see if within certain populations, an increase in marijuana use can correlate to an increase in tobacco, alcohol, or illicit drug use despite the fact that marijuana legality is increasing.
+
+## Glimpse of data
+
+```{r}
+#| label: load-and-glimpse-drugs
+
+drugs <- read.csv("data/drugs.csv")
+glimpse(drugs)
+```

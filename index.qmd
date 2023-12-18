@@ -1,0 +1,8 @@
+---
+title: "Chipotle"
+subtitle: "STA 199 Project"
+format: html
+editor: visual
+---
+
+This study investigates the influence of the 2013 modification in the definition of rape on reported crime rates in the United States. Using data sourced from the Unified Crime Reporting Program (UCR) spanning from 1960 to 2019, the research explores trends at both national and state levels. The analysis employs a variety of statistical and visualization techniques to answer the research question: Did the change in the UCR definition lead to a statistically significant increase in the number of reported rapes? Key findings include a substantial surge in nationally reported rape rates from 2012 to 2013, coinciding with the 2013 alteration in the definition. State-level data further supports the trend, with 49 out of 50 US states showing an increase in rape rates between 2012 and 2013. Additionally, we find that the uptick in rape rates does not correlate with an increase in the rates of other violent crimes, as there was little to no increase in other violent crimes following the 2013 modification. The study suggests that prior to 2012, many instances of rape went overlooked due to misclassficiation by the outdated and incomplete definition of rape which was in use by the UCR.
